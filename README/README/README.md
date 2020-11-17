@@ -26,7 +26,6 @@ Load balancing ensures that the application will be highly secure, in addition t
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the servers and system logs.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name      | Function | IP Address | Operating System |
 |-----------|----------|------------|------------------|
@@ -83,22 +82,8 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 - Filebeat collects logs and packages them to send to logstash
-- Metricbeat takes the metrics and statistics that it collects and ships them to the output that ypu choose
+- Metricbeat takes the metrics and statistics that it collects and ships them to the output that you choose
 
-### Using the Playbook
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
-
-SSH into the control node and follow the steps below:
-- Copy the configuration file to /etc/filebeat/filebeat.yml
-- Update the config file to include the elk VM and the web VM's IP addresses and be sure to add them to the hosts file as well
-- Run the playbook, and navigate to [load balancer IP]/setup.php to check that the installation worked as expected.
-
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it? filebeat-playbook.yml is the file and you copy it to /etc/ansible/roles
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on? You updates the hosts file to designate which IP belobg to which machine
-- _Which URL do you navigate to in order to check that the ELK server is running? [local machine IP]:5601/app/kibana
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
 To download the configuration file, run curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/files/filebeat-config.yml
 To configure this file to your system you will need to then use "nano" to edit the downloaded file
 To update the host file you will need to navigate to it under etc/ansible and edit it using "nano hosts"
